@@ -88,7 +88,7 @@ class App extends React.Component {
           todos={this.state.todos}
           toggle={this.toggle}
         />
-        <button onClick={this.clear}>Clear Completed</button>
+        <button onClick={this.clear} className='clearbtn'>Clear Completed</button>
       </div>
     );
   }
