@@ -1,11 +1,23 @@
 import React from 'react';
 
-const Todo = props => {
-  return (
-    <div>
-        {props.todo.task}
-    </div>
-  );
-};
 
-export default Todo;
+
+export default function Todo(props){
+  let classNames = "item";
+  if (props.item.completed) {
+    classNames += " completed";
+  }
+
+  function updateTodo(){
+    props.toggle(props.item.id)
+  }
+
+
+
+return (
+  <div className={classNames} onClick={updateTodo}>
+    <p>{props.item.task}</p>
+  </div>
+);
+
+}

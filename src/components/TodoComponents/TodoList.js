@@ -1,22 +1,14 @@
 // your components will all go in this `component` directory.
 // feel free to change this component.js into TodoList.js
 import React from 'react';
-
-
-
 import Todo from './Todo';
 
-const TodoList = props => {
+export default function TodoList(props) {
   return (
-    <div>
-      {props.todos.map(todo => (
-        <Todo
-          key={todo.id}
-          todo={todo}
-        />
+    <div className="todo-list">
+      {props.todos.map(item => (
+        <Todo key={item.id} item={item} toggle={props.toggle} />
       ))}
     </div>
   );
-};
-
-export default TodoList;
+}
